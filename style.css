@@ -1,0 +1,112 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/bg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f2f2f2; /* Light gray */
+    font-family: 'Quicksand', sans-serif;
+}
+
+.sensorSquare,
+#temperatureValue,
+#humidityValue,
+.graph-info {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar {
+    background-color: #555555; /* Darker gray */
+    padding: 10px;
+    color: #ffffff; /* White */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    flex-grow: 1;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.refresh-container {
+    flex-shrink: 0;
+}
+
+.refresh {
+    width: 30px;
+    height: auto;
+}
+
+.sensorSquare {
+    width: 25vw;
+    height: 40vh;
+    border: 1px solid black;
+    margin: 100px 20px 150px 20px; /* Adjusted margin for bottom positioning */
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    background-color: #778899;
+    border-radius: 40px;
+    box-shadow: 32px 32px 16px rgba(0, 0, 0, 0.5);
+    position: relative; /* Added position property */
+}
+
+.collapsible {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px; /* Set the width of the button */
+    height: 30px; /* Set the height of the button */
+    outline: none; /* Remove the default focus/active state outline */
+    position: relative; /* Added position property */
+}
+
+.graph-button {
+    width: 100%; /* Make the image fill the button */
+    height: 100%; /* Make the image fill the button */
+}
+
+.collapsible:active,
+.collapsible:focus {
+    outline: none; /* Remove outline on click or focus */
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: absolute; /* Added position property */
+    bottom: 0; /* Positioned at the bottom */
+    left: 0; /* Aligned to the left */
+    width: 100%; /* Full width */
+    border-radius: 0 0 40px 40px; /* Adjusted border-radius for a smoother look */
+}
+
+
+.collapsible.active + .content {
+    display: block;
+}
+
+.graph-info {
+    font-size: 1em; /* Adjust as needed */
+}
+
+#temperatureValue,
+#humidityValue {
+    font-size: 10em; /* Adjust as needed */
+}
+
+.sensorSquare.graph-hovered,
+.sensorSquare:hover {
+    background-color: #A9A9A9; /* Lighter gray color on hover */
+}

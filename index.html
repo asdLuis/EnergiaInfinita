@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Infinita</title>
+    <link rel="icon" type="image/png" href="images/eolic.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="refresh-container">
+            <img src="images/refresh.png" alt="Refresh" class="refresh">
+        </div>
+    </div>
+
+    <div class="sensorSquare" id="temperatureSquare">
+        <h2>Temperature</h2>
+        <button class="collapsible" onclick="toggleTemperatureGraph()">
+            <img src="images/arrow.png" alt="Show Graph" class="graph-button">
+        </button>
+        <div class="content" id="temperatureContent">
+            <!-- Your temperature graph content goes here -->
+            <p>This is where your temperature graph will be displayed.</p>
+        </div>
+        <div id="temperatureValue">50</div>
+    </div>
+    
+
+    <div class="sensorSquare" id="humiditySquare">
+        <h2>Humidity</h2>
+        <button class="collapsible" onclick="toggleHumidityGraph()">
+            <img src="images/arrow.png" alt="Show Graph" class="graph-button">
+        </button>
+        <div class="content" id="humidityContent">
+            <!-- Your humidity graph content goes here -->
+            <p>This is where your humidity graph will be displayed.</p>
+        </div>
+        <div id="humidityValue">50</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

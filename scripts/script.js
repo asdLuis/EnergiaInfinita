@@ -5,7 +5,7 @@ function formatDateTime(timestamp) {
 
 async function fetchData() {
     try {
-        const response = await fetch('http://192.168.1.91/ProyectoESP/retrieve.php');
+        const response = await fetch('[Your URL]/ProyectoESP/retrieve.php');
         const data = await response.json();
 
         console.log('Received data:', data); // Add this line to log the received data

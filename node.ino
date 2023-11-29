@@ -6,10 +6,11 @@
 #define DHTTYPE DHT11
 DHT dht11(DHTPIN, DHTTYPE);
 
-String URL = "[Your URL]"; // Use HTTP if your server doesn't support HTTPS
+// Use the correct URLs for insert and retrieve
+String insertUrl = "[Your URL]/ProyectoESP/insert.php";
+String retrieveUrl = "[Your URL]/ProyectoESP/retrieve.php";
 const char* ssid = "[Your Wifi]";
-const char* password = "[Your password]";
-
+const char* password = "[Your pasword]";
 int temperature = 0;
 int humidity = 0;
 
@@ -25,27 +26,10 @@ void loop() {
   }
 
   Load_DHT11_Data();
-  String postData = "temperature=" + String(temperature) + "&humidity=" + String(humidity);
+  insertData();
 
-  HTTPClient http;
-  http.begin(URL);
-  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-  int httpCode = http.POST(postData);
-
-  if (httpCode > 0) {
-    Serial.print("HTTP Response code: ");
-    Serial.println(httpCode);
-    String payload = http.getString();
-    Serial.print("Server response: ");
-    Serial.println(payload);
-  } else {
-    Serial.println("HTTP Request failed");
-  }
-
-  http.end();
-
-  delay(30000); // Delay for 25 seconds before sending the next request
+  // Delay for 5 seconds before sending the next request
+  delay(5000);
 }
 
 void connectWiFi() {
@@ -79,4 +63,26 @@ void Load_DHT11_Data() {
 
   Serial.printf("Temperature: %d °C\n", temperature);
   Serial.printf("Humidity: %d %%\n", humidity);
+}
+
+void insertData() {
+  String postData = "temperature=" + String(temperature) + "&humidity=" + String(humidity);
+
+  HTTPClient http;
+  http.begin(insertUrl);
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  int httpCode = http.POST(postData);
+
+  if (httpCode > 0) {
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpCode);
+    String payload = http.getString();
+    Serial.print("Server response: ");
+    Serial.println(payload);
+  } else {
+    Serial.println("HTTP Request failed");
+  }
+
+  http.end();
 }

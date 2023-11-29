@@ -6,9 +6,9 @@
 #define DHTTYPE DHT11
 DHT dht11(DHTPIN, DHTTYPE);
 
-String URL = "http://192.168.1.91/ProyectoESP/index.php"; // Use HTTP if your server doesn't support HTTPS
-const char* ssid = "INFINITUM9FEE_2.4";
-const char* password = "kFlTbJf3G4";
+String URL = "[Your URL]"; // Use HTTP if your server doesn't support HTTPS
+const char* ssid = "[Your Wifi]";
+const char* password = "[Your password]";
 
 int temperature = 0;
 int humidity = 0;

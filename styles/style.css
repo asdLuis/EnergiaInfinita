@@ -48,7 +48,7 @@ body {
 
 .sensorSquare {
     width: 29vw;
-    height: 35vh;
+    height: 32vh;
     border: 1px solid black;
     margin: 50px 20px 150px 20px;
     padding: 10px;
@@ -124,13 +124,13 @@ body {
 .chart-container {
     width: 25vw;
     height: 40vh;
-    margin-top: 175px;
+    margin-top: 160px;
     display: inline-block;
 }
 
 canvas {
     border: 1px solid black;
     border-radius: 40px; /* Adjusted border-radius to match the sensor squares */
-    background-color: #bbc1c8;
+    background-color: #ffffff;
     box-shadow: 16px 16px 8px rgba(0, 0, 0, 0.5);
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Infinita</title>
+    <link rel="icon" type="image/png" href="images/eolic.png">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="sensorSquare" id="temperatureSquare">
+        <h2>Temperature</h2>
+        <div class="content" id="temperatureContent">
+            <p class="graph-info">Loading...</p>
+        </div>
+        <div id="temperatureValue">Loading...</div>
+        <div class="chart-container" id="temperatureChartContainer">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <div class="sensorSquare" id="humiditySquare">
+        <h2>Humidity</h2>
+        <div class="content" id="humidityContent">
+            <p class="graph-info">Loading...</p>
+        </div>
+        <div id="humidityValue">Loading...</div>
+        <div class="chart-container" id="humidityChartContainer">
+            <canvas id="humidityChart"></canvas>
+        </div>
+    </div>
+
+    <div id="lastFetchedContainer">
+        <span id="lastFetchedDateTime"></span>
+    </div>
+
+    <!-- Include scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/charts.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
